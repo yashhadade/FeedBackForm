@@ -44,10 +44,10 @@ const RatingForm = () => {
       ];
       
       return (
-        <div>
+        <div className=' mt-[50px] '>
           {sections.map((section) => (
-            <div key={section.sectionKey}>
-              <h2>{section.title}</h2>
+            <div key={section.sectionKey} className=''>
+              <h2 className='ml-[200px] mr-[200px] text-xl border-b-4 border-black pb-1 pt-3' >{section.title}</h2>
               {section.data.map((data, index) => (
                 <CommanRatingField
                   key={index}
@@ -69,7 +69,9 @@ const RatingForm = () => {
               ))}
             </div>
           ))}
-          <button onClick={handleSubmit}>Submit</button>
+          <div className=' flex justify-end pr-[200px] mt-2 mb-4'>
+          <button onClick={handleSubmit} className=' bg-sky-800 w-28 rounded-md text-fuchsia-100 hover:bg-sky-500'>Submit</button>
+          </div>
         </div>
       );
     };
