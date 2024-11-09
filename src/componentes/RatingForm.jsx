@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { cleaningandHygieneData, controlsData, hoandTeamManagersData, personalData, purshaseandStoresData, siteSupervisionData } from './DataFeedback';
 import CommanRatingField from '../commonComponents/CommanRatingField';
 import Navbar from '../commonComponents/Navbar';
-
+  
 const RatingForm = () => {
   const [ratings, setRatings] = useState({
     personalData: {},
@@ -44,13 +44,12 @@ const RatingForm = () => {
 
   return (
     <>
-    <div className="bg-white-50 px-8 rounded-lg shadow-lg ">
+    <div className="bg-white-50 px-8 rounded-lg shadow-lg max-w-full mx-auto">
       {sections.map((section) => (
         <div key={section.sectionKey} className="mb-6">
-          {/* Section Title */}
+   
           <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
-          
-          {/* Rating Fields */}
+    
           {section.data.map((data, index) => (
             <CommanRatingField
               key={index}
@@ -72,8 +71,8 @@ const RatingForm = () => {
           ))}
         </div>
       ))}
-      
-      {/* Submit Button */}
+  
+     
       <div className="flex justify-center mt-6">
         <button
           onClick={handleSubmit}
@@ -83,7 +82,6 @@ const RatingForm = () => {
         </button>
       </div>
     </div>
-    
     </>
   );
 };
