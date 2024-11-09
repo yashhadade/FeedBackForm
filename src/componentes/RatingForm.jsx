@@ -1,7 +1,6 @@
 import React, { useState } from 'react'; 
 import { cleaningandHygieneData, controlsData, hoandTeamManagersData, personalData, purshaseandStoresData, siteSupervisionData } from './DataFeedback';
 import CommanRatingField from '../commonComponents/CommanRatingField';
-
 const RatingForm = () => {
   const [ratings, setRatings] = useState({
     personalData: {},
