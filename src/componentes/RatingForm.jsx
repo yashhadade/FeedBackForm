@@ -1,17 +1,21 @@
-import React, { useState } from 'react'; 
-import { cleaningandHygieneData, controlsData, hoandTeamManagersData, personalData, purshaseandStoresData, siteSupervisionData } from './DataFeedback';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { cleaningandHygieneData, controlsData, hoandTeamManagersData, personalData, purchaseandStoresData, siteSupervisionData } from './DataFeedback';
 import CommanRatingField from '../commonComponents/CommanRatingField';
 const RatingForm = () => {
+  const { ratingId } = useParams();
+
   const [ratings, setRatings] = useState({
     personalData: {},
     cleaningandHygieneData: {},
     siteSupervisionData: {},
-    purshaseandStoresData: {},
+    purchaseandStoresData: {},
     controlsData: {},
     hoandTeamManagersData: {},
   });
 
   const handleRadioChange = (section, name, value) => {
+    
     setRatings((prevRating) => ({
       ...prevRating,
       [section]: {
@@ -20,19 +24,52 @@ const RatingForm = () => {
       },
     }));
   };
+  // console.log(ratings);
+
+  // console.log("Total length of personal Data"+Object.keys(ratings.personalData).length *5);
+
+  const calculateTotalSelectionTotal = (sectionKey) => {
+    const totalSection = (Object.keys(ratings[sectionKey]).length) * 5
+    return totalSection
+  }
+
+  const calculateTotalRatingTotal = () => {
+    let totalRatingCalculation = 0;
+    for (let sectionKey in ratings) {
+      totalRatingCalculation += (Object.keys(ratings[sectionKey]).length) * 5;
+    }
+    return totalRatingCalculation;
+  };
+  const calculateSectionTotal = (sectionKey) => {
+    const sectionRatings = ratings[sectionKey];
+    return Object.values(sectionRatings)
+      .reduce((acc, current) => acc + (current) || 0, 0);
+  };
+
+  const calculateTotalRating = () => {
+    return Object.keys(ratings)
+      .reduce((total, sectionKey) => total + calculateSectionTotal(sectionKey), 0);
+  };
 
   const handleSubmit = () => {
-    const totalRating = Object.values(ratings)
-      .flatMap((sectionData) => Object.values(sectionData))
-      .reduce((accumulator, currentValue) => accumulator + (parseInt(currentValue) || 0), 0);
-    console.log(totalRating);
+    const totalRating = calculateTotalRating();
+
+    console.log("Total Ratings:" + totalRating);
   };
+
+  const percentageOfTheRating = () => {
+    const totalRating = calculateTotalRating();
+    const totalRatingActual = calculateTotalRatingTotal();
+    if (totalRating === 0) return 0;
+
+    return ((totalRating / totalRatingActual) * 100).toFixed(2);
+  }
 
   const sections = [
     { title: 'Personnel', data: personalData, sectionKey: 'personalData' },
     { title: 'Cleaning & Hygiene', data: cleaningandHygieneData, sectionKey: 'cleaningandHygieneData' },
     { title: 'Site Supervision', data: siteSupervisionData, sectionKey: 'siteSupervisionData' },
-    { title: 'Purshase & Stores', data: purshaseandStoresData, sectionKey: 'purshaseandStoresData' },
+    { title: 'Purchase & Stores', data: purchaseandStoresData, sectionKey: 'purchaseandStoresData' },
     { title: 'Controls', data: controlsData, sectionKey: 'controlsData' },
     { title: 'HO and Team Managers', data: hoandTeamManagersData, sectionKey: 'hoandTeamManagersData' }
   ];
@@ -54,6 +91,11 @@ const RatingForm = () => {
               id4={data.id + '4'}
               id5={data.id + '5'}
               name={data.name}
+              value1={data.value1}
+              value2={data.value2}
+              value3={data.value3}
+              value4={data.value4}
+              value5={data.value5}
               radioLabel1={data.radioLabel1}
               radioLabel2={data.radioLabel2}
               radioLabel3={data.radioLabel3}
@@ -63,9 +105,17 @@ const RatingForm = () => {
               onRadioChange={(value) => handleRadioChange(section.sectionKey, data.name, value)}
             />
           ))}
+          <div className=' flex justify-end'>
+            <div className="mt-2 text-lg font-semibold " >Sub Total: {calculateSectionTotal(section.sectionKey)}</div>
+            <div className="mt-2 text-lg font-semibold">/{calculateTotalSelectionTotal(section.sectionKey)}</div>
+          </div>
         </div>
       ))}
-
+      <div className=' flex justify-end'>
+        <div className="mt-4 text-xl font-bold text-gray-800 ">Total Rating: {calculateTotalRating()}</div>
+        <div className="mt-4 text-xl font-bold text-gray-800">/{calculateTotalRatingTotal()}</div>
+      </div>
+      <div className=' flex justify-end mt-4 text-xl font-bold text-gray-800'>Percentage:{percentageOfTheRating()}%</div>
       {/* Submit Button */}
       <div className="flex justify-center mt-6">
         <button

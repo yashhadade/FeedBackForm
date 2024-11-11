@@ -5,6 +5,7 @@ function CommanRatingField(props) {
         label, 
         id1, id2, id3, id4, id5, 
         name, 
+        value1,value2,value3,value4,value5,
         radioLabel1, radioLabel2, radioLabel3, radioLabel4, radioLabel5, 
         selectedValue, 
         onRadioChange 
@@ -25,9 +26,9 @@ function CommanRatingField(props) {
                         type="radio" 
                         id={id1} 
                         name={name} 
-                        value="5" 
-                        checked={selectedValue === '5'} 
-                        onChange={() => handleChange('5')} 
+                        value={value5} 
+                        checked={selectedValue === 5} 
+                        onChange={() => handleChange(5)} 
                         className="pr-1"
                     />
                     <label htmlFor={id1} className=" p-[3px] text-xs sm:text-sm">{radioLabel1}</label>
@@ -38,9 +39,9 @@ function CommanRatingField(props) {
                         type="radio" 
                         id={id2} 
                         name={name} 
-                        value="4" 
-                        checked={selectedValue === '4'} 
-                        onChange={() => handleChange('4')} 
+                        value={value4}
+                        checked={selectedValue === 4} 
+                        onChange={() => handleChange(4)} 
                         className="pr-1"
                     />
                     <label htmlFor={id2} className="  p-[3px] text-xs sm:text-sm">{radioLabel2}</label>
@@ -51,9 +52,9 @@ function CommanRatingField(props) {
                         type="radio" 
                         id={id3} 
                         name={name} 
-                        value="3" 
-                        checked={selectedValue === '3'} 
-                        onChange={() => handleChange('3')} 
+                        value={value3} 
+                        checked={selectedValue === 3} 
+                        onChange={() => handleChange(3)} 
                         className="pr-1"
                     />
                     <label htmlFor={id3} className="  p-[3px] text-xs sm:text-sm">{radioLabel3}</label>
@@ -64,9 +65,9 @@ function CommanRatingField(props) {
                         type="radio" 
                         id={id4} 
                         name={name} 
-                        value="2" 
-                        checked={selectedValue === '2'} 
-                        onChange={() => handleChange('2')} 
+                        value={value2} 
+                        checked={selectedValue === 2} 
+                        onChange={() => handleChange(2)} 
                         className="pr-1"
                     />
                     <label htmlFor={id4} className="  p-[3px] text-xs sm:text-sm">{radioLabel4}</label>
@@ -77,9 +78,9 @@ function CommanRatingField(props) {
                         type="radio" 
                         id={id5} 
                         name={name} 
-                        value="1" 
-                        checked={selectedValue === '1'} 
-                        onChange={() => handleChange('1')} 
+                        value={value1} 
+                        checked={selectedValue === 1} 
+                        onChange={() => handleChange(1)} 
                         className="pr-1"
                     />
                     <label htmlFor={id5} className="  p-[3px] text-xs sm:text-sm">{radioLabel5}</label>
