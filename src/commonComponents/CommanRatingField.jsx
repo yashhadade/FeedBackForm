@@ -30,7 +30,7 @@ function CommanRatingField(props) {
                         onChange={() => handleChange('5')} 
                         className="pr-1"
                     />
-                    <label htmlFor={id1} className="text-xs sm:text-sm">{radioLabel1}</label>
+                    <label htmlFor={id1} className=" p-[3px] text-xs sm:text-sm">{radioLabel1}</label>
                 </div>
 
                 <div className="flex items-center">
@@ -43,7 +43,7 @@ function CommanRatingField(props) {
                         onChange={() => handleChange('4')} 
                         className="pr-1"
                     />
-                    <label htmlFor={id2} className="text-xs sm:text-sm">{radioLabel2}</label>
+                    <label htmlFor={id2} className="  p-[3px] text-xs sm:text-sm">{radioLabel2}</label>
                 </div>
 
                 <div className="flex items-center">
@@ -56,7 +56,7 @@ function CommanRatingField(props) {
                         onChange={() => handleChange('3')} 
                         className="pr-1"
                     />
-                    <label htmlFor={id3} className="text-xs sm:text-sm">{radioLabel3}</label>
+                    <label htmlFor={id3} className="  p-[3px] text-xs sm:text-sm">{radioLabel3}</label>
                 </div>
 
                 <div className="flex items-center">
@@ -69,7 +69,7 @@ function CommanRatingField(props) {
                         onChange={() => handleChange('2')} 
                         className="pr-1"
                     />
-                    <label htmlFor={id4} className="text-xs sm:text-sm">{radioLabel4}</label>
+                    <label htmlFor={id4} className="  p-[3px] text-xs sm:text-sm">{radioLabel4}</label>
                 </div>
 
                 <div className="flex items-center">
@@ -82,7 +82,7 @@ function CommanRatingField(props) {
                         onChange={() => handleChange('1')} 
                         className="pr-1"
                     />
-                    <label htmlFor={id5} className="text-xs sm:text-sm">{radioLabel5}</label>
+                    <label htmlFor={id5} className="  p-[3px] text-xs sm:text-sm">{radioLabel5}</label>
                 </div>
             </div>
         </div>
