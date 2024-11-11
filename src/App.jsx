@@ -5,17 +5,18 @@ import './App.css'
 import Navbar from './commonComponents/Navbar'
 import CommanRatingField from './commonComponents/CommanRatingField'
 import RatingForm from './componentes/RatingForm'
-import { BrowserRouter } from 'react-router-dom'
+import {  Route, Routes } from 'react-router-dom'
 
 function App() {
- 
-
   return (
     <>
-     <BrowserRouter>
+     
       <Navbar/>
-      <RatingForm/>
-     </BrowserRouter>
+      {/* <RatingForm/> */}
+      <Routes>
+        <Route  path='/feedBackForm' element={<RatingForm/>}/>
+      </Routes>
+    
     </>
   )
 }
