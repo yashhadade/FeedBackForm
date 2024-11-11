@@ -66,11 +66,14 @@ const RatingForm = () => {
         </div>
       ))}
 
+
+
       {/* Submit Button */}
       <div className="flex justify-center mt-6">
         <button
           onClick={handleSubmit}
-          className="bg-sky-700 text-white py-2 px-6 rounded-full shadow-md hover:bg-sky-500 transition duration-300"
+          className="bg-sky-700 text-white py-2 px-6 rounded-full shadow-md
+           hover:bg-sky-500 transition duration-300"
         >
           Submit
         </button>
