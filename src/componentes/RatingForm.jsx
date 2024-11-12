@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { cleaningandHygieneData, controlsData, hoandTeamManagersData, personalData, purchaseandStoresData, siteSupervisionData } from './DataFeedback';
 import CommanRatingField from '../commonComponents/CommanRatingField';
+import usePostData from '../API/PostData';
 const RatingForm = () => {
   const { ratingId } = useParams();
-
+  const { postData, responseData, error, loading, message } =usePostData(`feedback/new/${ratingId}`)
   const [ratings, setRatings] = useState({
     personalData: {},
     cleaningandHygieneData: {},
@@ -61,16 +62,36 @@ const handleRemark=(e)=>{
     return Object.keys(ratings)
       .reduce((total, sectionKey) => total + calculateSectionTotal(sectionKey), 0);
   };
-
-  const handleSubmit = () => {
+  const formatRatingsForPost = () => {
+    const formattedRatings = {};
+    for (const category in ratings) {
+      if (ratings.hasOwnProperty(category)) {
+        const categoryData = ratings[category];
+        for (const key in categoryData) {
+          if (categoryData.hasOwnProperty(key)) {
+            formattedRatings[key] = categoryData[key];
+          }
+        }
+      }
+    }
+    return formattedRatings;
+  };
+  const handleSubmit = async () => {
+    const ratingsData = formatRatingsForPost();
+    const dataToSubmit = { ...ratingsData, remark: remarkName.remark };
     // const totalRating = calculateTotalRating();
-    setFormData(ratings,remarkName)
-    
-    
+    setFormData(dataToSubmit)
+    await postData(dataToSubmit);
     // console.log("Total Ratings:" + totalRating);
+   
+    
   };
 
-  console.log(formData);
+  useEffect(() => {
+    if (responseData) {
+    }
+  }, [responseData]);
+ 
 
   const percentageOfTheRating = () => {
     const totalRating = calculateTotalRating();
@@ -90,10 +111,11 @@ const handleRemark=(e)=>{
   ];
 
   return (
+
     <div className="bg-white-50 p-8 rounded-lg shadow-lg">
+      {message && <p style={{ color: "green" }}>Thanks For Submiting the FeedBackForm</p>}
       {sections.map((section) => (
-        <div key={section.sectionKey} className="mb-6">
-          <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
+        <div key={section.sectionKey} className="mb-6">          <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
 
           {/* Rating Fields */}
           {section.data.map((data, index) => (
@@ -146,7 +168,10 @@ const handleRemark=(e)=>{
       </div>
       <div className=' flex justify-end mt-4 text-xl font-bold text-gray-800'>Percentage:{percentageOfTheRating()}%</div>
 
-
+      <div className=' flex'>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {message && <p style={{ color: "green" }}>{message}</p>}
+      </div>
 
       {/* Submit Button */}
       <div className="flex justify-center mt-6">
