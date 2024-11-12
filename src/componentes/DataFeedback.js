@@ -1,7 +1,7 @@
  export const personalData=[
     {
         id: 'radio1',
-        name: 'staffCourtesy',
+        name: 'personal1',
          
         label: 'Staff courtesy and presentation',
         value1:1,
@@ -17,7 +17,7 @@
       },
       {
         id: 'radio2',
-        name: 'staffHygiene',
+        name: 'personal2',
          
         label: 'Staff Personnel Hygiene',
         value1:1,
@@ -33,7 +33,7 @@
       },
       {
         id: 'radio3',
-        name: 'staffUniform',
+        name: 'personal3',
          
         label: 'Uniforms, Shoes, Caps',
         value1:1,
@@ -49,7 +49,7 @@
       },
       {
         id: 'radio4',
-        name: 'staffTurnover',
+        name: 'personal4',
          
         label: 'Staff Turnover, Absenteeism, Late Coming',
         value1:1,
@@ -65,7 +65,7 @@
       },
       {
         id: 'radio5',
-        name: 'staffKnowledge',
+        name: 'personal5',
          
         label: 'Staff knowledge and responsiveness',
         value1:1,
@@ -84,7 +84,7 @@
  export const cleaningandHygieneData=[
     {
         id: 'radio6',
-        name: 'cleaningPremises',
+        name: 'cleaning1',
          
         label: 'Cleaning of premises',
         value1:1,
@@ -100,7 +100,7 @@
       },
       {
         id: 'radio7',
-        name: 'cleaningToilets',
+        name: 'cleaning2',
          
         label: 'Cleaning of Toilets',
         value1:1,
@@ -116,7 +116,7 @@
       },
       {
         id: 'radio8',
-        name: 'judiciousUseMaterial',
+        name: 'cleaning3',
          
         label: 'Judicious use of Housekeeping material',
         value1:1,
@@ -132,7 +132,7 @@
       },
       {
         id: 'radio9',
-        name: 'documentationTasks',
+        name: 'cleaning4',
          
         label: 'Documentation of tasks (todo & completed)',
         value1:1,
@@ -148,7 +148,7 @@
       },
       {
         id: 'radio10',
-        name: 'garbageDisposal',
+        name: 'cleaning5',
          
         label: 'Suitable Garbage Disposal Measures',
         value1:1,
@@ -167,7 +167,7 @@
  export const siteSupervisionData=[
     {
         id: 'radio11',
-        name: 'supervisionStandards',
+        name: 'supervision1',
          
         label: 'Supervision Standards',
         value1:1,
@@ -183,7 +183,7 @@
       },
       {
         id: 'radio12',
-        name: 'jobKnowledge',
+        name: 'supervision2',
          
         label: 'Job Knowledge',
         value1:1,
@@ -199,7 +199,7 @@
       },
       {
         id: 'radio13',
-        name: 'speedEfficiencyWorkQuality',
+        name: 'supervision3',
          
         label: 'Speed, Efficiency, Work quality of site incharge',
         value1:1,
@@ -215,7 +215,7 @@
       },
       {
         id: 'radio14',
-        name: 'responsivenessCustomerNeeds',
+        name: 'supervision4',
          
         label: 'Responsiveness To Customer Needs',
         value1:1,
@@ -231,7 +231,7 @@
       },
       {
         id: 'radio15',
-        name: 'endUserFeedback',
+        name: 'supervision5',
          
         label: 'End User Feedback',
         value1:1,
@@ -250,7 +250,7 @@
  export const purchaseandStoresData=[
     {
         id: 'radio16',
-        name: 'qualityRawMaterial',
+        name: 'purchase1',
          
         label: 'Quality of Raw Material',
         value1:1,
@@ -266,7 +266,7 @@
       },
       {
         id: 'radio17',
-        name: 'levelOfStocking',
+        name: 'purchase2',
          
         label: 'Level of Stocking',
         value1:1,
@@ -282,7 +282,7 @@
       },
       {
         id: 'radio18',
-        name: 'binCardDailyIndent',
+        name: 'purchase3',
          
         label: 'Bin Card, Daily Indent System Being Followed',
         value1:1,
@@ -298,7 +298,7 @@
       },
       {
         id: 'radio19',
-        name: 'purchaseSpecifications',
+        name: 'purchase4',
          
         label: 'Purchase Specifications Being Followed',
         value1:1,
@@ -314,7 +314,7 @@
       },
       {
         id: 'radio20',
-        name: 'qualityMaterialSupplied',
+        name: 'purchase5',
          
         label: 'Quality of Material Supplied',
         value1:1,
@@ -332,7 +332,7 @@
 export const controlsData=[
     {
         id: 'radio21',
-        name: 'documentationBilling',
+        name: 'controls1',
          
         label: 'Appropriate documentation and Billing',
         value1:1,
@@ -348,7 +348,7 @@ export const controlsData=[
       },
       {
         id: 'radio22',
-        name: 'attendanceDocuments',
+        name: 'controls2',
          
         label: 'Attendance and other relevant documents submitted on time',
         value1:1,
@@ -364,7 +364,7 @@ export const controlsData=[
       },
       {
         id: 'radio23',
-        name: 'regularTrainings',
+        name: 'controls3',
          
         label: 'Regular trainings held (on-site / off-site)',
         value1:1,
@@ -380,7 +380,7 @@ export const controlsData=[
       },
       {
         id: 'radio24',
-        name: 'preventiveMaintenanceRecommendations',
+        name: 'controls4',
          
         label: 'Recommendation on preventive maintenance',
         value1:1,
@@ -396,7 +396,7 @@ export const controlsData=[
       },
       {
         id: 'radio25',
-        name: 'timelyReceiptOfMaterials',
+        name: 'controls5', //need to ask
          
         label: 'Timely receipt of materials',
         value1:1,
@@ -415,7 +415,7 @@ export const controlsData=[
 export const hoandTeamManagersData=[
     {
         id: 'radio26',
-        name: 'managementTeamContact',
+        name: 'ho1',
          
         label: 'Management team in regular contact',
         value1:1,
@@ -431,7 +431,7 @@ export const hoandTeamManagersData=[
       },
       {
         id: 'radio27',
-        name: 'supervisionKnowledge',
+        name: 'ho2',
          
         label: 'Supervision and Knowledge',
         value1:1,
@@ -447,7 +447,7 @@ export const hoandTeamManagersData=[
       },
       {
         id: 'radio28',
-        name: 'clientNeedsResponsiveness',
+        name: 'ho3',
          
         label: 'Responsiveness to Client\'s Needs',
         value1:1,
@@ -463,7 +463,7 @@ export const hoandTeamManagersData=[
       },
       {
         id: 'radio29',
-        name: 'newTechnologyRecommendations',
+        name: 'ho4',
          
         label: 'Recommendation on new technology',
         value1:1,
@@ -479,7 +479,7 @@ export const hoandTeamManagersData=[
       },
       {
         id: 'radio30',
-        name: 'timelyDocumentation',
+        name: 'ho5',
          
         label: 'Provide timely documentation and information',
         value1:1,

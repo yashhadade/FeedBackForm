@@ -12,7 +12,18 @@ const RatingForm = () => {
     purchaseandStoresData: {},
     controlsData: {},
     hoandTeamManagersData: {},
+   
   });
+const [remarkName,setRemark] = useState({
+   remark: "",
+})
+const [formData, setFormData] = useState([])
+console.log
+const handleRemark=(e)=>{
+  setRemark({...remarkName,[e.target.name]: e.target.value});
+}
+// console.log(remarkName);
+
 
   const handleRadioChange = (section, name, value) => {
     
@@ -52,10 +63,14 @@ const RatingForm = () => {
   };
 
   const handleSubmit = () => {
-    const totalRating = calculateTotalRating();
-
-    console.log("Total Ratings:" + totalRating);
+    // const totalRating = calculateTotalRating();
+    setFormData(ratings,remarkName)
+    
+    
+    // console.log("Total Ratings:" + totalRating);
   };
+
+  console.log(formData);
 
   const percentageOfTheRating = () => {
     const totalRating = calculateTotalRating();
@@ -111,6 +126,20 @@ const RatingForm = () => {
           </div>
         </div>
       ))}
+
+<div>
+<label className='block text-xl font-bold  text-black-700'>Remark :</label>
+          <input
+            type="text"
+            name="remark"
+             value={remarkName.remark}
+            onChange={handleRemark}
+            placeholder="Enter Remark"
+            className='mt-1 block w-60 h-20 px-3 py-2 border border-black-300 rounded-md shadow-sm focus-outline-none 
+            focus:ring-black-500 focus:border-black-500' 
+          />
+</div> 
+
       <div className=' flex justify-end'>
         <div className="mt-4 text-xl font-bold text-gray-800 ">Total Rating: {calculateTotalRating()}</div>
         <div className="mt-4 text-xl font-bold text-gray-800">/{calculateTotalRatingTotal()}</div>
