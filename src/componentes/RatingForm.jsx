@@ -136,7 +136,7 @@ const handleRemark=(e)=>{
             onChange={handleRemark}
             placeholder="Enter Remark"
             className='mt-1 block w-60 h-20 px-3 py-2 border border-black-300 rounded-md shadow-sm focus-outline-none 
-            focus:ring-black-500 focus:border-black-500' 
+            focus:ring-black-500 focus:border-black-500'
           />
 </div> 
 
