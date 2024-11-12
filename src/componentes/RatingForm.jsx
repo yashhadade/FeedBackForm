@@ -176,11 +176,11 @@ const handleRemark=(e)=>{
       {/* Submit Button */}
       <div className="flex justify-center mt-6">
         <button
-          onClick={handleSubmit}
+          onClick={handleSubmit}  disabled={loading} 
           className="bg-sky-700 text-white py-2 px-6 rounded-full shadow-md
            hover:bg-sky-500 transition duration-300"
         >
-          Submit
+         {loading ? "Submitting..." : "Submit"}
         </button>
       </div>
     </div>
