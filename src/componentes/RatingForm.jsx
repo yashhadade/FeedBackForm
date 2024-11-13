@@ -115,7 +115,8 @@ const handleRemark=(e)=>{
     <div className="bg-white-50 p-8 rounded-lg shadow-lg">
       {message && <p style={{ color: "green" }}>Thanks For Submiting the FeedBackForm</p>}
       {sections.map((section) => (
-        <div key={section.sectionKey} className="mb-6">          <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
+        <div key={section.sectionKey} className="mb-6">        
+          <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
 
           {/* Rating Fields */}
           {section.data.map((data, index) => (

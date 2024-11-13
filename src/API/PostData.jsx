@@ -8,6 +8,7 @@ const usePostData = (url) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  
   const apiEndPoint = EndPoint();
 
   const postData = async (data) => {
