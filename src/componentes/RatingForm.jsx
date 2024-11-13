@@ -5,7 +5,7 @@ import CommanRatingField from '../commonComponents/CommanRatingField';
 import usePostData from '../API/PostData';
 const RatingForm = () => {
   const { ratingId } = useParams();
-  const { postData, responseData, error, loading, message } =usePostData(`feedback/new/${ratingId}`)
+  const { postData, responseData, error, loading, message,feedbackFormData } =usePostData(`feedback/new/${ratingId}`)
   const [ratings, setRatings] = useState({
     personalData: {},
     cleaningandHygieneData: {},
@@ -111,12 +111,14 @@ const handleRemark=(e)=>{
   ];
 
   return (
-
-    <div className="bg-white-50 p-8 rounded-lg shadow-lg">
-      {message && <p style={{ color: "green" }}>Thanks For Submiting the FeedBackForm</p>}
+    <div className=' '>
+    {feedbackFormData ? (
+        <div className=' flex items-center justify-center min-h-screen'><h1 className=" text-6xl font-bold">Feedb ack Form Is Submitted</h1></div>
+      ) : (
+      <div className="bg-white-50 p-8 rounded-lg shadow-lg">
       {sections.map((section) => (
-        <div key={section.sectionKey} className="mb-6">          <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
-
+        <div key={section.sectionKey} className="mb-6">          
+        <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
           {/* Rating Fields */}
           {section.data.map((data, index) => (
             <CommanRatingField
@@ -184,6 +186,8 @@ const handleRemark=(e)=>{
         </button>
       </div>
     </div>
+      )}
+  </div>
   );
 };
 

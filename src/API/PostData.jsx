@@ -8,6 +8,7 @@ const usePostData = (url) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [feedbackFormData,setFeedbackFormData]=useState(false)
   const apiEndPoint = EndPoint();
 
   const postData = async (data) => {
@@ -20,9 +21,10 @@ const usePostData = (url) => {
       setLoading(false);
       setError(null);
       setMessage("Data Saved SucussFully");
-
-      setTimeout(() => {
+      
+      setTimeout(async() => {
         setMessage("");
+        setFeedbackFormData(!feedbackFormData);
       }, 1000);
       return response.data;
     } catch (error) {
@@ -39,7 +41,7 @@ const usePostData = (url) => {
     }
   };
 
-  return { postData, responseData, error, loading, message };
+  return { postData, responseData, error, loading, message,feedbackFormData};
 };
 
 export default usePostData;
