@@ -5,7 +5,7 @@ import CommanRatingField from '../commonComponents/CommanRatingField';
 import usePostData from '../API/PostData';
 const RatingForm = () => {
   const { ratingId } = useParams();
-  const { postData, responseData, error, loading, message } =usePostData(`feedback/new/${ratingId}`)
+  const { postData, responseData, error, loading, message,feedbackFormData } =usePostData(`feedback/new/${ratingId}`)
   const [ratings, setRatings] = useState({
     personalData: {},
     cleaningandHygieneData: {},
@@ -111,13 +111,15 @@ const handleRemark=(e)=>{
   ];
 
   return (
-
-    <div className="bg-white-50 p-8 rounded-lg shadow-lg">
-      {message && <p style={{ color: "green" }}>Thanks For Submiting the FeedBackForm</p>}
+    <div className=' '>
+    {feedbackFormData ? (
+        <div className=' flex items-center justify-center min-h-screen'><h1 className=" text-6xl font-bold">Feedback Form Is Submitted!!</h1></div>
+      ) : (
+      <div className="bg-white-50 p-8 rounded-lg shadow-lg">
+        <div className=' '>Points earned - Poor(1 to 2), Fair(3 to 4), Good(5)</div>
       {sections.map((section) => (
-        <div key={section.sectionKey} className="mb-6">        
-          <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
-
+        <div key={section.sectionKey} className="mb-6">          
+        <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
           {/* Rating Fields */}
           {section.data.map((data, index) => (
             <CommanRatingField
@@ -158,11 +160,12 @@ const handleRemark=(e)=>{
              value={remarkName.remark}
             onChange={handleRemark}
             placeholder="Enter Remark"
-            className='mt-1 block w-60 h-20 px-3 py-2 border border-black-300 rounded-md shadow-sm focus-outline-none 
+            className='mt-1 block w-1/3 h-20 px-3 py-2 border border-black-300 rounded-md shadow-sm focus-outline-none 
             focus:ring-black-500 focus:border-black-500'
           />
 </div> 
-
+      <div className=" flex mt-4 text-xl font-bold text-gray-800 justify-end">Previous Rating: {69}</div>
+      <div className=" flex mt-4 text-xl font-bold text-gray-800 justify-end">Average: {69}</div>
       <div className=' flex justify-end'>
         <div className="mt-4 text-xl font-bold text-gray-800 ">Total Rating: {calculateTotalRating()}</div>
         <div className="mt-4 text-xl font-bold text-gray-800">/{calculateTotalRatingTotal()}</div>
@@ -185,6 +188,8 @@ const handleRemark=(e)=>{
         </button>
       </div>
     </div>
+      )}
+  </div>
   );
 };
 
