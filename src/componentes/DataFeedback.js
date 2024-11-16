@@ -35,7 +35,7 @@
         id: 'radio3',
         name: 'personal3',
          
-        label: 'Uniforms, Shoes, Caps',
+        label: 'Uniforms, Shoes, ID Card',
         value1:1,
         value2:2,
         value3:3,
@@ -252,7 +252,7 @@
         id: 'radio16',
         name: 'purchase1',
          
-        label: 'Quality of Raw Material',
+        label: 'Control of Delivery and Damages',
         value1:1,
         value2:2,
         value3:3,

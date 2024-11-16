@@ -65,7 +65,7 @@ const handleRemark=(e)=>{
   const formatRatingsForPost = () => {
     const formattedRatings = {};
     for (const category in ratings) {
-      if (ratings.hasOwnProperty(category)) {
+      if (ratings.hasOwnProperty(category)) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         const categoryData = ratings[category];
         for (const key in categoryData) {
           if (categoryData.hasOwnProperty(key)) {
@@ -102,7 +102,7 @@ const handleRemark=(e)=>{
   }
 
   const sections = [
-    { title: 'Personnel', data: personalData, sectionKey: 'personalData' },
+    { title: 'Personal', data: personalData, sectionKey: 'personalData' },
     { title: 'Cleaning & Hygiene', data: cleaningandHygieneData, sectionKey: 'cleaningandHygieneData' },
     { title: 'Site Supervision', data: siteSupervisionData, sectionKey: 'siteSupervisionData' },
     { title: 'Purchase & Stores', data: purchaseandStoresData, sectionKey: 'purchaseandStoresData' },
@@ -113,10 +113,10 @@ const handleRemark=(e)=>{
   return (
     <div className=' '>
     {feedbackFormData ? (
-        <div className=' flex items-center justify-center min-h-screen'><h1 className=" text-6xl font-bold">Feedback Form Is Submitted!!</h1></div>
+        <div className=' flex items-center justify-center min-h-screen'><h1 className=" text-6xl font-bold">Thank you for your valuable feedback!</h1></div>
       ) : (
       <div className="bg-white-50 p-8 rounded-lg shadow-lg">
-        <div className=' '>Points earned - Poor(1 to 2), Fair(3 to 4), Good(5)</div>
+        <div className='text-lg font-semibold sm:text-left md:text-center lg:text-right'>Points earned - Poor(1 to 2), Fair(3 to 4), Good(5)</div>
       {sections.map((section) => (
         <div key={section.sectionKey} className="mb-6">          
         <h2 className="text-2xl font-semibold text-gray-800 border-b-2 border-blue-600 pb-2 mb-4">{section.title}</h2>
@@ -146,7 +146,7 @@ const handleRemark=(e)=>{
             />
           ))}
           <div className=' flex justify-end'>
-            <div className="mt-2 text-lg font-semibold " >Sub Total: {calculateSectionTotal(section.sectionKey)}</div>
+            <div className="mt-2 text-lg font-semibold">Sub Total: {calculateSectionTotal(section.sectionKey)}</div>
             <div className="mt-2 text-lg font-semibold">/{calculateTotalSelectionTotal(section.sectionKey)}</div>
           </div>
         </div>
@@ -164,8 +164,8 @@ const handleRemark=(e)=>{
             focus:ring-black-500 focus:border-black-500'
           />
 </div> 
-      <div className=" flex mt-4 text-xl font-bold text-gray-800 justify-end">Previous Rating: {69}</div>
-      <div className=" flex mt-4 text-xl font-bold text-gray-800 justify-end">Average: {69}</div>
+      {/* <div className=" flex mt-4 text-xl font-bold text-gray-800 justify-end">Previous Rating: {69}</div>
+      <div className=" flex mt-4 text-xl font-bold text-gray-800 justify-end">Average: {69}</div> */}
       <div className=' flex justify-end'>
         <div className="mt-4 text-xl font-bold text-gray-800 ">Total Rating: {calculateTotalRating()}</div>
         <div className="mt-4 text-xl font-bold text-gray-800">/{calculateTotalRatingTotal()}</div>
