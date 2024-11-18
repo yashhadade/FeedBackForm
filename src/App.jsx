@@ -11,6 +11,7 @@ function App() {
     <>
      
       <Navbar/>
+      <RatingForm/>
       {/* <RatingForm/> */}
       <Routes>
         <Route  path='/feedBackForm/:ratingId' element={<RatingForm/>}/>
