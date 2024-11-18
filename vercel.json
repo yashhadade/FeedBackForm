@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      {
+        "source": "/feedBackForm/:ratingId",
+        "destination": "/src/componentes/ClientSiteAdd.jsx"
+      },
+      {
+        "source": "/clientSiteAdd",
+        "destination": "/src/componentes/RatingForm.jsx"
+      }
+    ]
+  }
