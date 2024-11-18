@@ -3,8 +3,8 @@ import './App.css'
 import Navbar from './commonComponents/Navbar'
 
 import {  Route, Routes } from 'react-router-dom'
-import ClientSiteAdd from './Componentes/clientSiteAdd'
-import RatingForm from './componentes/RatingForm'
+import ClientSiteAdd from './componentes/ClientSiteAdd.jsx'
+import RatingForm from './componentes/RatingForm.jsx'
 
 function App() {
   return (
