@@ -50,7 +50,7 @@ const handleRemark=(e)=>{
     for (let sectionKey in ratings) {
       totalRatingCalculation += (Object.keys(ratings[sectionKey]).length) * 5;
     }
-    return totalRatingCalculation;
+    return totalRatingCalculation; 
   };
   const calculateSectionTotal = (sectionKey) => {
     const sectionRatings = ratings[sectionKey];
@@ -62,7 +62,7 @@ const handleRemark=(e)=>{
     return Object.keys(ratings)
       .reduce((total, sectionKey) => total + calculateSectionTotal(sectionKey), 0);
   };
-  const formatRatingsForPost = () => {
+  const formatRatingsForPost = () => {  
     const formattedRatings = {};
     for (const category in ratings) {
       if (ratings.hasOwnProperty(category)) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
