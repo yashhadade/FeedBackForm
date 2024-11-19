@@ -1,5 +1,5 @@
 {
     "rewrites":  [
-      {"source": "/:match*", "destination": "http://feed-back-form-nine.vercel.app/:match*"}
+      {"source": "/(.*)", "destination": "/"}
     ]
   }
