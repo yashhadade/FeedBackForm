@@ -1,7 +1,7 @@
 import React from 'react'
 
 const EndPoint = () => {
-    const api="http://localhost:8086"
+    const api="http://smartfm.ismartfacitechpl.com/feedback"
   return api
 }
 
